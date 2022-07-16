@@ -88,7 +88,7 @@ public class ProductRepository {
                 preparedStatement.setString(1, product.getName());
                 preparedStatement.setString(2, product.getDescription());
                 preparedStatement.setLong(3, product.getId());
-                int affectedRows = preparedStatement.executeUpdate(SQL);
+                int affectedRows = preparedStatement.executeUpdate();
                 if (affectedRows <= 0) {
                     throw new RuntimeException(String.format("Could not update product %s!", product));
                 }
